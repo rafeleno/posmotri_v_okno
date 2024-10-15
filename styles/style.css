@@ -1,29 +1,12 @@
-.page {
-    padding-right: 30px;
-    padding-left: 30px;
-    padding-top: 133px;
-    padding-bottom: 133px;
-}
-
 .content {
     display: flex;
     gap: 30px;
 }
 
 .result {
-    width: 711px;
+    max-width: 711px;
     display: flex;
     flex-direction: column;
-}
-
-.result__video {
-    width: 711px;
-    height: 386px;
-    object-fit: cover;
-}
-
-.result__video::-webkit-media-controls {
-    display: none;
 }
 
 /* я намеренно убрал controls у плеера т.к мне показалось это актуальным для такого сайта */
@@ -32,12 +15,22 @@
     position: relative;
 }
 
+.result__video {
+    width: 711px;
+    max-height: 386px;
+    object-fit: cover;
+}
+
+.result__video::-webkit-media-controls {
+    display: none;
+}
+
 .search-form {
     display: grid;
     width: 100%;
     height: 54px;
-    grid-template-columns: 31% 212px auto;
-    grid-column-gap: 42px;
+    grid-template-columns: 32% 210px auto;
+    grid-column-gap: 40px;
 }
 
 .search-form__fieldset {
@@ -50,6 +43,18 @@
     position: relative;
     color: var(--main-color);
     margin-left: 3px;
+}
+
+.search-form__label {
+    position: relative;
+}
+
+.search-form__label:has(:focus-visible) {
+    outline: 1px solid;
+}
+
+.search-form__label-checkbox:hover .search-form__label-text {
+    text-decoration: underline;
 }
 
 .search-form__textfield {
@@ -71,18 +76,6 @@
     outline-offset: 0.1em;
 }
 
-.search-form__label-checkbox:hover .search-form__label-text {
-    text-decoration: underline;
-}
-
-.search-form__label {
-    position: relative;
-}
-
-.search-form__label:has(:focus-visible) {
-    outline: 1px solid;
-}
-
 .search-form__checkbox-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -91,8 +84,10 @@
     align-items: center;
 }
 
-.search-form__checkbox_wrapper:has(:focus-visible) {
-    outline: 1px solid var(--main-color);
+.search-form__label-checkbox {
+    position: relative;
+    display: flex;
+    cursor: pointer;
 }
 
 .search-form__pseudo-checkbox {
@@ -101,14 +96,9 @@
     height: 19px;
     width: 19px;
     margin-right: 5px;
+    margin-top: 1px;
     border: 1px solid var(--main-color);
     align-self: center;
-}
-
-.search-form__label-checkbox {
-    position: relative;
-    display: flex;
-    cursor: pointer;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox {
@@ -131,14 +121,7 @@
 }
 
 .search-form__submit-button {
-    padding-top: 6px;
-    padding-bottom: 6px;
     align-self: end;
-}
-
-.button:focus-visible {
-    outline: 1px solid var(--main-color);
-    outline-offset: 1px;
 }
 
 .content__details {
@@ -161,9 +144,6 @@
     font-size: inherit;
     line-height: inherit;
     text-transform: inherit;
-}
-
-.content__accent {
     color: var(--accent-color);
 }
 
@@ -174,36 +154,36 @@
     flex-direction: column;
     gap: 29px;
     overflow-y: scroll;
+    -ms-overflow-style: none;
 }
 
 .content__list::-webkit-scrollbar {
     width: 0 !important;
-}
-.content__list {
-    -ms-overflow-style: none;
-}
-
-.content__video-card {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.content__video-card {
-    display: flex;
-    height: 107px;
-}
-
-.content__card-link_current {
-    background-color: var(--accent-color);
 }
 
 .content__card-link {
     display: block;
 }
 
+.content__card-link_current {
+    background-color: var(--accent-color);
+}
+
 .content__card-link:active .content__video-card {
     background-color: var(--accent-color);
+}
+
+.content__card-link:hover .content__video-card {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+}
+
+.content__video-card {
+    width: 100%;
+    height: 107px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .content__video-card-description-container {
@@ -212,12 +192,6 @@
     padding: 6px;
     padding-left: 2px;
     width: 100%;
-}
-
-.content__card-link:hover .content__video-card {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
 }
 
 .content__video-card-title {
@@ -244,6 +218,4 @@
 
 .more-button {
     width: 100%;
-    padding-top: 6px;
-    padding-bottom: 6px;
 }

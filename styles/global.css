@@ -25,6 +25,10 @@ html {
 .page {
     inline-size: 1200px;
     block-size: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 133px;
+    padding-bottom: 133px;
     margin: auto;
     color: #fff;
     font-family: "Fira Sans Condensed", sans-serif;
@@ -61,6 +65,8 @@ button,
     cursor: pointer;
     width: auto;
     height: auto;
+    padding-top: 6px;
+    padding-bottom: 6px;
     background-color: transparent;
     border: 1px var(--main-color) solid;
     color: var(--main-color);
@@ -81,14 +87,10 @@ button:focus,
     outline: none;
 }
 
-.visually-hidden {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    white-space: nowrap;
+button:focus-visible,
+.button:focus-visible {
+    outline: 1px solid var(--main-color);
+    outline-offset: 1px;
 }
 
 fieldset {
@@ -97,6 +99,16 @@ fieldset {
 
 input {
     padding: 0;
+}
+
+.visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
 
 .solid-white-underline::before {
