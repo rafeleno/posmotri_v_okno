@@ -28,7 +28,6 @@
 .search-form {
     display: grid;
     width: 100%;
-    height: 54px;
     grid-template-columns: 225px 212px 194px;
     grid-column-gap: 40px;
 }
@@ -119,11 +118,10 @@
 }
 
 .search-form__submit-button {
-    align-self: end;
+    margin-top: 17px;
 }
 
 .content__details {
-    max-height: 534px;
     width: 100%;
 }
 
@@ -140,8 +138,6 @@
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
-    line-height: inherit;
-    text-transform: inherit;
     color: var(--accent-color);
 }
 
@@ -150,13 +146,16 @@
     max-height: 299px;
     display: flex;
     flex-direction: column;
-    gap: 29px;
     overflow-y: scroll;
     -ms-overflow-style: none;
 }
 
 .content__list::-webkit-scrollbar {
     width: 0 !important;
+}
+
+.content__list-item {
+    margin-bottom: 30px;
 }
 
 .content__card-link {
@@ -167,11 +166,11 @@
     background-color: var(--accent-color);
 }
 
-.content__card-link:active .content__video-card {
+.content__card-link:active {
     background-color: var(--accent-color);
 }
 
-.content__card-link:hover .content__video-card {
+.content__card-link:hover {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
@@ -189,7 +188,7 @@
     flex-direction: column;
     padding: 6px;
     padding-left: 2px;
-    width: 100%;
+    width: 200px;
 }
 
 .content__video-card-title {
@@ -199,6 +198,9 @@
     line-height: 100%;
     text-transform: uppercase;
     margin-bottom: 6px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .content__video-card-description {
@@ -211,7 +213,11 @@
 
 .content__video-card-thumbnail {
     height: 100%;
-    width: 100%;
+    width: 194px;
+    /* если я строго не отграничиваю 
+    ширину то элемент стремится забрать
+    все пространство, несомтря на фикиро-
+    ваную ширину description container */
 }
 
 .more-button {
