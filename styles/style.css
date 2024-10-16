@@ -29,7 +29,7 @@
     display: grid;
     width: 100%;
     height: 54px;
-    grid-template-columns: 32% 210px auto;
+    grid-template-columns: 225px 212px 194px;
     grid-column-gap: 40px;
 }
 
@@ -42,7 +42,6 @@
 .search-form__fieldset-title {
     position: relative;
     color: var(--main-color);
-    margin-left: 3px;
 }
 
 .search-form__label {
@@ -79,7 +78,7 @@
 .search-form__checkbox-list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 13px;
+    column-gap: 16px;
     justify-items: end;
     align-items: center;
 }
@@ -102,9 +101,8 @@
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox {
-    position: absolute;
-    top: 1px;
-    left: -24px;
+    cursor: pointer;
+    position: relative;
     height: 19px;
     width: 19px;
     background-color: var(--main-color);
@@ -213,7 +211,7 @@
 
 .content__video-card-thumbnail {
     height: 100%;
-    width: auto;
+    width: 100%;
 }
 
 .more-button {
