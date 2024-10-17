@@ -105,16 +105,8 @@
     height: 19px;
     width: 19px;
     background-color: var(--main-color);
-}
-
-.search-form__checkbox:checked + .search-form__pseudo-checkbox::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 17px;
-    width: 17px;
-    border: var(--background-color) 1px solid;
+    outline: var(--accent-color) 1px solid;
+    outline-offset: -2px;
 }
 
 .search-form__submit-button {
