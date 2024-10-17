@@ -70,6 +70,7 @@ button,
     background-color: transparent;
     border: 1px var(--main-color) solid;
     color: var(--main-color);
+    font-weight: 700;
 }
 
 button:active,
